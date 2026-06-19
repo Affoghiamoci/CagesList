@@ -56,6 +56,10 @@ export async function GET(
       configurable: true,
       configurationRequired: false,
     },
+    stremioAddonsConfig: {
+      issuer: "https://stremio-addons.net",
+      signature: "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..aQby3h9HlafleLaiBRJ2ew.yyHt54n5d_5lk09zNeUC6CVnjElZ6ZA6SlCYaGSk7sXPbNfvc5cgCAkKPJ1kbY0wxyyk4_l7L0YlmPLX_wuZpAwQazyOlViLY8CPz_5jp8qP8WLfJSNM9I8LQRTVMWvz.1zQ_yhhsnO77NwR-K4yYTw"
+    },
   };
 
   return NextResponse.json(manifest, {
