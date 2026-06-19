@@ -1,7 +1,6 @@
-# CagesList
+# Cagelog
 
 A Stremio Add-on to create personalized catalogs for your favorite actors, directors, and movie sagas.
-Based on the architecture and design of Multiboxd.
 
 ## Features
 

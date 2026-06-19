@@ -43,9 +43,9 @@ export async function GET(
   }
 
   const manifest = {
-    id: 'community.cageslist',
+    id: 'community.cagelog',
     version: '0.1.6',
-    name: 'CagesList',
+    name: 'Cagelog',
     description: 'Cataloghi personalizzati di attori, registi e saghe cinematografiche',
     logo: `${baseUrl}/icon.png`,
     resources: ['catalog'],

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'CagesList — Attori, Registi e Saghe su Stremio',
+  title: 'Cagelog — Attori, Registi e Saghe su Stremio',
   description: 'Aggiungi cataloghi personalizzati di attori, registi e saghe cinematografiche direttamente su Stremio.',
   icons: {
     icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🎬</text></svg>'

@@ -96,8 +96,8 @@ const TRANSLATIONS = {
     copyLink: 'Copy Link',
     copied: 'Copied!',
     faqTitle: 'FREQUENTLY ASKED QUESTIONS',
-    faq1q: 'What is CagesList?',
-    faq1a: 'CagesList is a Stremio add-on that allows you to create custom movie catalogs. You can track all the films of your favorite actors, follow your favorite directors, or create catalogs for entire sagas (like Star Wars or Marvel) in chronological order.',
+    faq1q: 'What is Cagelog?',
+    faq1a: 'Cagelog is a Stremio add-on that allows you to create custom movie catalogs. You can track all the films of your favorite actors, follow your favorite directors, or create catalogs for entire sagas (like Star Wars or Marvel) in chronological order.',
     faq2q: 'Why do I need a TMDB API Key?',
     faq2a: 'The add-on requires a TMDB (The Movie Database) API Key to dynamically fetch the latest movies for the actors or collections you select. The key is completely free, secure, and is only saved inside the URL you use to install the addon in Stremio.',
     faq3q: 'How does the sorting work?',
@@ -140,8 +140,8 @@ const TRANSLATIONS = {
     copyLink: 'Copia Link',
     copied: 'Copiato!',
     faqTitle: 'FREQUENTLY ASKED QUESTIONS',
-    faq1q: 'Cos\'è CagesList?',
-    faq1a: 'CagesList è un add-on per Stremio che ti permette di creare cataloghi personalizzati di film. Puoi tracciare tutti i film dei tuoi attori preferiti, seguire i tuoi registi del cuore o creare cataloghi per intere saghe cinematografiche (come Star Wars o Marvel) in ordine di uscita.',
+    faq1q: 'Cos\'è Cagelog?',
+    faq1a: 'Cagelog è un add-on per Stremio che ti permette di creare cataloghi personalizzati di film. Puoi tracciare tutti i film dei tuoi attori preferiti, seguire i tuoi registi del cuore o creare cataloghi per intere saghe cinematografiche (come Star Wars o Marvel) in ordine di uscita.',
     faq2q: 'Perché mi serve una TMDB API Key?',
     faq2a: 'L\'add-on ha bisogno di una chiave API di TMDB (The Movie Database) per poter recuperare dinamicamente la lista dei film degli attori o delle saghe che selezioni. La chiave è completamente gratuita, sicura e viene salvata unicamente all\'interno dell\'URL che usi per installare l\'addon in Stremio.',
     faq3q: 'Come funziona l\'ordinamento dei film?',
@@ -400,9 +400,9 @@ export default function ConfigPage() {
         <header className="header">
           <div className="logo" style={{ display: 'inline-flex', alignItems: 'center' }}>
             <div className="logo-mark" style={{ background: 'transparent', boxShadow: 'none' }}>
-              <img src="/icon.png" alt="CagesList Logo" width={40} height={40} style={{ borderRadius: '10px' }} />
+              <img src="/icon.png" alt="Cagelog Logo" width={40} height={40} style={{ borderRadius: '10px' }} />
             </div>
-            <span className="logo-name" style={{ marginRight: '8px' }}>CagesList</span>
+            <span className="logo-name" style={{ marginRight: '8px' }}>Cagelog</span>
             <span style={{ fontSize: '13px', color: 'var(--text-2)', display: 'flex', alignItems: 'center', gap: '6px', fontWeight: 500, background: 'var(--surface-2)', padding: '4px 8px', borderRadius: '12px', border: '1px solid var(--border)' }}>
               v0.1.6
               <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#10b981', boxShadow: '0 0 8px rgba(16, 185, 129, 0.5)' }}></span>
