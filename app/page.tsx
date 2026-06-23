@@ -321,20 +321,6 @@ export default function ConfigPage() {
     updateConfig('catalogs', newCatalogs);
   }
 
-  async function handleCopy() {
-    try { 
-      await navigator.clipboard.writeText(encodedUrl); 
-    } catch {
-      const ta = document.createElement('textarea');
-      ta.value = encodedUrl;
-      document.body.appendChild(ta); 
-      ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-    }
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  }
 
   const toggleFaq = (idx: number) => {
     setOpenFaq(prev => prev === idx ? null : idx);
@@ -670,40 +656,50 @@ export default function ConfigPage() {
         <div className="install-card">
           <p className="install-title">📡 {t.installTitle}</p>
 
-          <div className="install-url-box">
-            {encodedUrl
-              ? encodedUrl
-              : <span className="install-url-placeholder">{t.installPlaceholder}</span>
-            }
-          </div>
+          {(() => {
+            const BASE_URL = 'https://cagelog.affogo.fyi/manifest.json';
+            const displayUrl = encodedUrl || BASE_URL;
+            const isBase = !encodedUrl;
 
-          <div className="install-btns">
-            <a
-              href={encodedUrl ? `stremio://${encodedUrl.replace(/^https?:\/\//, '')}` : '#'}
-              className="btn btn-primary install-btn-primary"
-              style={!encodedUrl ? { pointerEvents: 'none', opacity: 0.4 } : {}}
-            >
-              {t.installStremio}
-            </a>
-            <a
-              href={encodedUrl ? `https://web.stremio.com/#?addonOpen=${encodeURIComponent(encodedUrl)}` : '#'}
-              className="btn btn-ghost install-btn-secondary"
-              style={!encodedUrl ? { pointerEvents: 'none', opacity: 0.4 } : {}}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {t.installWeb}
-            </a>
-          </div>
+            return (
+              <>
+                <div className="install-url-box" style={isBase ? { color: 'var(--text-3)' } : {}}>
+                  {displayUrl}
+                </div>
 
-          <button
-            className="btn btn-ghost install-copy-btn"
-            onClick={handleCopy}
-            disabled={!encodedUrl}
-          >
-            {copied ? `✓ ${t.copied}` : t.copyLink}
-          </button>
+                <div className="install-btns">
+                  <a
+                    href={`stremio://${displayUrl.replace(/^https?:\/\//, '')}`}
+                    className="btn btn-primary install-btn-primary"
+                  >
+                    {t.installStremio}
+                  </a>
+                  <a
+                    href={`https://web.stremio.com/#?addonOpen=${encodeURIComponent(displayUrl)}`}
+                    className="btn btn-ghost install-btn-secondary"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {t.installWeb}
+                  </a>
+                </div>
+
+                <button
+                  className="btn btn-ghost install-copy-btn"
+                  onClick={async () => {
+                    try { await navigator.clipboard.writeText(displayUrl); }
+                    catch { const ta = document.createElement('textarea'); ta.value = displayUrl; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); }
+                    setCopied(true);
+                    setTimeout(() => setCopied(false), 2000);
+                  }}
+                >
+                  {copied ? `✓ ${t.copied}` : t.copyLink}
+                </button>
+              </>
+            );
+          })()}
         </div>
+
 
         {/* ── FAQ Section ── */}
         <div className="faq-section">

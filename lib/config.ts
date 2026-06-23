@@ -42,7 +42,7 @@ export const DEFAULT_CONFIG: AddonConfig = {
   rpdbKey: '',
   rpdbProvider: 'rpdb',
   rpdbStyle: 'default',
-  catalogPrefix: 'Cagelog',
+  catalogPrefix: '',
   hideAddonName: false,
   hideHyphen: false,
 };
